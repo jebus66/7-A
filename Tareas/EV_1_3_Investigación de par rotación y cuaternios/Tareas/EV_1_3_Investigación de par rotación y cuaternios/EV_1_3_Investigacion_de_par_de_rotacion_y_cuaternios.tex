@@ -1,0 +1,170 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, amsbsy}
+\usepackage{cancel} % para tachar
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{stackrel} % para el comando \stackbin
+
+\title{Investigacion de rotacion y cuaternios}
+\author{Gutiérrez Muñoz José de Jesús \\ 7 - A \\ Ing. Mecatrónica}
+\date{16 - Septiembre - 2019}
+
+\begin{document}
+\maketitle
+\large
+Rotación.
+
+
+De los recursos de geometría analítica recordamos que al rotar un vector (x,y) $\in \mathbb{R}^2$ del origen por un ángulo $\theta$ obtenemos otro vector $({x'},{y'}) \in \mathbb{R}^2$ cuyas coordenadas son:
+
+$x{'}= cos(0)x−sen(0)y, y{'}= sen(0)x+ cos(0)y$
+
+Lo cual expresamos por:
+\begin{equation}
+\left
+[\begin{array}{lcr}
+x{'}\\ y{'} \\
+\end{array}\right]
+R = \theta
+\left
+[\begin{array}{lcr}
+x\\ y \\
+\end{array}\right]
+\end{equation}
+
+Donde:
+
+\begin{equation}
+R ( \theta ) =
+\left
+[\begin{array}{lcr}
+cos \ 0 & -sen \ 0\\ sen \ 0 & cos \ 0\\
+\end{array}\right]
+\end{equation}
+
+Observemos que:
+
+\begin{equation}
+R( \theta ) \ . \ R^T( \theta ) =
+\left
+[\begin{array}{lcr}
+1 \ & \ 0 \\ 0 \ & \ 1 \\
+\end{array}\right]
+\end{equation}
+
+por lo que R $\in$ SO(2).
+
+
+La froma de mitad de ángulo. Podemos obterner la matriz de rotación para un vector en el plano como sigue. \\ Consideremos:
+
+\begin{equation}
+A = 
+\left
+[\begin{array}{lcr}
+a^2-b^2
+\end{array}\right]
+,B =
+\left
+[\begin{array}{lcr}
+2ab
+\end{array}\right]
+\end{equation}
+
+Si  $A =cos \frac{0}{2}$ y  $B =sen \frac{0}{2}$ tenemos que
+
+\begin{equation}
+A =
+\left
+[\begin{array}{lcr}
+cos^2(\frac{0}{2})-sen^2(\frac{0}{2})
+\end{array}\right]
+\end{equation}
+
+\begin{equation} 
+=
+\left
+[\begin{array}{lcr}
+1 - 2 sen^2 (\frac{0}{2})
+\end{array}\right]
+\end{equation}
+\begin{equation}
+=
+\left
+[\begin{array}{lcr}
+cos \ 0
+\end{array}
+\right]
+\end{equation}
+\begin{equation}
+B =
+\left
+[\begin{array}{lcr}
+2cos  (\frac{0}{2}) sen(\frac{0}{2})
+\end{array}\right]
+\end{equation}
+\begin{equation}
+=
+\left
+[\begin{array}{lcr}
+sen \ 0
+\end{array}\right]
+\end{equation}
+
+de modo que la matriz de rotación no cambia
+
+\begin{equation}
+R_x(\alpha) =
+\left
+[\begin{array}{lcr}
+1 \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ 0 \\ 0 \ \ cos \ \alpha \ \ -sen \ \alpha \\ 0 \ \ \ \ sen \ \alpha \ \ \ \ cos \ \alpha
+\end{array}\right],
+\end{equation}
+
+\begin{equation}
+R_y(\phi) =
+\left
+[\begin{array}{lcr}
+cos \ \phi \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ sen \ \phi \\ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ 0 \\ -sen \ \phi \ \ \ \ \ 0 \ \ \ \ cos \ \phi
+\end{array}\right],
+\end{equation}
+
+\begin{equation}
+R_z(\theta) =
+\left
+[\begin{array}{lcr}
+cos \ \theta \ -sen \ \theta \ \ \ \ 0 \\ sen \ \theta \ \ \ cos \ \theta \ \ \ \ \ \ 0 \\ \ \ \ \ 0 \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ 1
+\end{array}\right],
+\end{equation}
+
+En este caso se tiene:
+
+$R_x(\alpha)$ rota el plano yz alrededor del origen por un ángulo $\alpha$
+
+$R_y(\phi)$ rota el plano xz alrededor del origen por un ángulo $\phi$
+
+$R_z(\theta)$ rota el plano xy alrededor del origen por un ángulo $\theta$
+
+
+\Large
+Cuaternios.
+
+
+Para enetebnder la relación entre rotaciones $\mathbb{R}^3$ y los cuaternios, es conveniente utilizar la notación $q = [\lambda,a]$ para el cuaternios $q = \lambda + xi + ji + zk$, donde $a = xi + yj + zk$. La separación del cuaternio q en dos partes nos permite distinguir su parte real $\lambda$ y su ``Parte imaginaria'' a; además, identificamos el cuaternio puro $a = xi + yj + zk$ con el vector $a = (x,y,z)\in \mathbb{R}^3$. De manera recíproca, dado un vector $b = (u,v,w)\in \mathbb{R}^3$, le hacemos corresponder el cuaternio $q_b = [0,b]$, con $b = ui + vj + wk \in \mathbb{H}_p$.
+
+
+De esta manera, dados los cuaternio $q = [\lambda,a]$ y $r = [\mu,b]$ definimos dpos operaciones entre las partes imaginarias de q y r: El producto punto y el producto cruz de los vectores $a,b \in \mathbb{R}^3$.
+
+
+Notemos que con esta definición, {a,b} $\in \mathbb{R}$ y a x b es otro cuaternio con parte real igual a cero y su ``parte imaginaria'' está dada por los componentes del vector a x b. Usando esta notación se tiene que el producto de los cuaternio $q = [\lambda,a]$ y $r = [\mu,b]$ se expresa como:
+
+\begin{equation}
+ q . r = [\lambda,a] . [\mu,b] = [\lambda \mu - {a,b}, \lambda b + \mu a + a x b,
+\end{equation}
+
+
+Y esta fórmula nos será muy útil para describir la relación entre los cuaternios unitarios y las rotaciones en $\mathbb{R}^3$.
+
+\end{document}
