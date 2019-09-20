@@ -1,0 +1,141 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, amsbsy}
+\usepackage{cancel} % para tachar
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{stackrel} % para el comando \stackbin
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\title{Practica 1 \\ Investigacion de rotacion y cuaternios}
+\author{Alvarado Galicia Felipe \\
+Gutiérrez Muñoz José de Jesús \\ 
+Medina Rodríguez Francisco Javier \\
+Martínez Noyola Moisés Emanuel \\ 
+Pasillas Gonzáles Iván Pasillas \\ 
+7 - A \\ 
+Ing. Mecatrónica}
+\date{16 - Septiembre - 2019}
+
+\begin{document}
+\maketitle
+
+Para la instalacion primero se me dirigí a la pagina que tiene el sistema de ``ROS'' que es la siguiente: \\
+(http://wiki.ros.org/kinetic/Installation/Ubuntu) \\
+La cual viene los archivos para la instalacion de este programa. \\
+
+Para iniciar la instalacion de esta aplicación se abrira la terminal de Lynux. \\
+
+Primero se inicia con la instalacion del siguiente enlace. \\
+
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'$ \\
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos.png}
+\end{center}
+
+Lo cual llevara la terminal de sistema directamente a los servidores de la instalación. \\
+
+Depues de esto se configurara la llave 
+
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos2.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos3.png}
+\end{center}
+
+Despues se pedira la llave (Key), la cual se agregara la llave de esta aplicación. \\
+
+curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xC1CF6\\E31E6BADE8868B172B4F42ED6FBAB17C654' | sudo apt-key add - \\
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos4.png}
+\end{center}
+
+Si se configuran bien las llaves aparecera un Ok.
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos5.png}
+\end{center}
+
+Se actualiza la terminal con los nuevos comandos que integramos. \\
+
+sudo apt-get update \\
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos6.png}
+\end{center}
+
+Despues de esto se tienen 4 diferentes tipos de instalarlo, el recomendable es el siguiente. \\
+sudo apt-get install ros-kinetic-desktop-full \\
+Despues de que acabe con la instalación del ROS, se instalaran sus paquetes de esta aplicación. \\ \\
+apt-cache search ros-kinetic \\
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos8.png}
+\end{center}
+
+Al terminar con los paquetes, se configuracion de la compilación y lo requisitos de compones en ROS. \\ \\
+sudo rosdep init \\
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos9.png}
+\end{center}
+
+rosdep update \\
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos10.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos11.png}
+\end{center}
+
+Es conveniente si las variables de entorno ROS se agregan automáticamente a su sesión bash cada vez que se inicia un nuevo shell: \\
+
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc \\
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos12.png}
+\end{center}
+
+source ~/.bashrc \\
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos14.png}
+\end{center}
+
+Si tiene instalada más de una distribución ROS, ~ / .bashrc solo debe obtener el archivo setup.bash para la versión que está utilizando actualmente. Que serian lo siguiente. \\
+
+source /opt/ros/kinetic/setup.bash \\
+
+(Estas Parte no tengo imagen).
+
+Si usa zsh en lugar de bash, debe ejecutar los siguientes comandos para configurar su shell: \\ \\ 
+echo "source /opt/ros/kinetic/setup.zsh" >> ~/.zshrc \\
+source ~/.zshrc
+
+(Como no usamos este metodo no se tiene la imagen para mostrarlo)
+
+Hasta el momento solo se ha instalado lo necesario para ejecutar los paquetes de ROS. Para crear y administrar su propio espacion de trabajo para ROS. Existen varias herramientas, pero nosotros usaremos la siguiente. \\
+
+sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential \\
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos15.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\textwidth]{CapturaRos/CapturaRos16.png}
+\end{center}
+
+Como en este caso ya lo tengo instalado, me pide que lo actualice. Pero a mandar ese codigo en la terminal empezara la descarga los paquetes que se necesitan para ejecutar ROS.
+\end{document}
