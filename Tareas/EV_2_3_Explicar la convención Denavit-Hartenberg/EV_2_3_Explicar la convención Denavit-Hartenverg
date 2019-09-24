@@ -1,0 +1,78 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, amsbsy}
+\usepackage{cancel} % para tachar
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{stackrel} % para el comando \stackbin
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\title{Explicar la convención Denavit-Hartenverg}
+\author{Gutiérrez Muñoz José de Jesús \\ 7 - A \\ Ing. Mecatronica}
+\date{23 - Septiembre - 2019}
+
+\begin{document}
+\maketitle
+La representación Denavit-HartenbergJosé Cortés Parejo. Marzo 2008Se trata de un procedimieto sistemático para describir la estructura cinemática de una cadena articuladaconstituida por articulaciones con. un solo grado de libertad.
+
+
+Para ello, a cada articulación se le asigna un Sistema de Referencia Local con origen en un punto \textbf{$Q_i$} y ejes ortonormales [\textbf{$X_i$},\textbf{$Y_i$},\textbf{$Z_i$}], comenzando con un primer S.R fijo e inmóvil dado por los eje [\textbf{$X_0$},\textbf{$Y_0$},\textbf{$Z_0$}], anclado a un punto fijo \textbf{$Q_0$} de la Base sobre la que está montada toda la estructura de la cadena.Este Sistema de Referencia no tiene por qué ser el Universal con origen (\textbf{0,0,0}) y la Base canónica.
+
+
+Asignación de Sistemas de Referencia.
+
+
+Las articulaciones se numeran desde \textbf{1} hasta \textbf{n}. A la articulación \textbf{i} -ésimase le asocia su propio eje de rotacióncomo Eje \textbf{$Z_i-1$} de forma que el ejede giro de la {$1^a$} articulación es \textbf{$Z_0$} y el de la \textbf{n} -ésima articulación, \textbf{$Z_n-1$}.
+
+
+En la Figura adjunta se muestra laestructura del Robot PUMA   juntocon sus articulaciones y ejes de rotación.
+
+
+\begin{center}
+\includegraphics{Figura_1.png}
+\end{center}
+
+
+Para la articulación \textbf{i} -ésima (que es la que gira alrededor de \textbf{$Z_i-1$}), la elección del origen de coordenadas \textbf{$Q_i$} y del Eje \textbf{$X_i$} sigue reglas muy precisas en función de la geometría delos brazos articulados. el Eje \textbf{Y_i} por su parte, se escoge para que el sistema [\textbf{$X_i$}, \textbf{$Y_i$}, \textbf{$Z_i$}] sea dextrógiro. La especificación de cada Eje \textbf{$X_i$} depende de la relación espacial entre \textbf{$Z_i$} y \textbf{$Z_i-1$}, distinguiéndose 2 casos:
+
+
+1.- \textbf{$Z_i$} y \textbf{$Z_i-1$} no son paralelos. 
+
+
+Entonces existe una única recta perpendicular a ambos,cuya intersección con los ejes proporciona su mínimadistancia (que puede ser 0). Esta distancia, \textbf{$a_i$},  medida desde el eje \textbf{$Z_i-1$} hacia el eje \textbf{$Z_1$} (con su signo), es unode los parámetros asociados a la articulación \textbf{i}-ésima. La distancia \textbf{$d_i$} desde \textbf{$Q_i-1$} a la   intersección de   laperpendicular común entre \textbf{$Z_i-1$} y \textbf{$Z_i$} con \textbf{$Z_i-1$} es el 2° de los parámetros.
+
+
+En este caso, el Eje \textbf{$X_i$} es esta recta, siendo el sentidopositivo el que va desde el Eje \textbf{$Z_i-1$} al \textbf{$Z_i$} si \textbf{$a_i$} > \textbf{0} .El origen de coordenadas \textbf{$Q_i$} es la intersección de dicharecta con el Eje \textbf{$Z_i$}.
+
+
+\begin{center}
+\includegraphics{Figura_2.png}
+\end{center}
+
+
+2- \textbf{$Z_i$} y \textbf{$Z_i-1$} son paralelos.
+
+
+En esta situación el Eje \textbf{$X_i$} se toma en   el planoconteniendo a \textbf{$Z_i-1$} y \textbf{$Z_i$} y perpendicular a ambos. El origen \textbf{$Q_i$} es cualquier punto conveniente del eje \textbf{$Z_i$}. El parámetroia \textbf{$a_i$} es, como antes, la distancia perpendicularentre los ejes \textbf{$Z_i-1$} y \textbf{$Z_i$}, y \textbf{$d_i$} es la distancia desde \textbf{$Q_i-1$}.
+
+
+Una vez determinado el Eje \textbf{$X_i$}, a la articulación \textbf{i}-ésima se le asocia un {$3^er$} parámetro fijo \textbf{$a_i$} que es el ángulo queforman los ejes\textbf{$Z_i-1$} y \textbf{$Z_i$} relación al eje \textbf{$X_1$}
+
+
+.Nótese que cuando el brazo \textbf{i} -ésimo (que une rígidamentelas articulaciones \textbf{i} e \textbf{$i+1$}) gira en torno al eje \textbf{$Z_i-1$} (que es el de rotación de la articulación \textbf{i}), los parámetros \textbf{$a_i$}, \textbf{$d_i$} y \textbf{$α_i$} permanecen constantes, pues dependenexclusivamente de las posiciones/orientaciones relativas entre los ejes \textbf{$Z_i-1$} y \textbf{$Z_i$}, que son invariables. Por tanto, \textbf{$a_i$}, \textbf{$d_i$} y \textbf{$α_i$} pueden calcularse a partir de cualquier configuración de la estructura articulada, enparticular a partir de una configuración inicial estándar. Precisamente el ángulo \textbf{$θ_i$} de giro que forman los ejes \textbf{$X_i-1$} y \textbf{$X_i$} con respecto al eje \textbf{$Z_i-1$} es el 4º parámetro asociado a la articulación \textbf{i} y el único de ellosque varía cuando el brazo \textbf{i} gira.
+
+
+Es importante observar que el conjunto de los 4 parámetros \textbf{$a_1$}, \textbf{$d_i$}, \textbf{$α_i$} y \textbf{$θ_i$} determina totalmente el Sistemade Referencia de la articulación \textbf{i+1} en función del S.R de la articulación \textbf{i}.
+
+
+\begin{center}
+\includegraphics{Figura_3.png}
+\end{center}
+
+
+\bibliographystyle{estilo}
+\bibliography{EV_2_3_Explicar la convención Denavit-Hartenberg.bib}
+\end{document}
