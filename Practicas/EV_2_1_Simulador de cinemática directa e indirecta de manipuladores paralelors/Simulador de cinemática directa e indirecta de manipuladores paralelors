@@ -1,0 +1,91 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, amsbsy}
+\usepackage{cancel} % para tachar
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{stackrel} % para el comando \stackbin
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\title{Practica 1 \\ Simulador de cinemática directa e indirecta de manipuladores paralelos}
+\author{Alvarado Galicia Felipe \\
+Gutiérrez Muñoz José de Jesús \\ 
+Medina Rodríguez Francisco Javier \\
+Martínez Noyola Moisés Emanuel \\ 
+Pasillas Gonzáles Iván Pasillas \\ 
+7 - A \\ 
+Ing. Mecatrónica}
+\date{27 - Septiembre - 2019}
+\begin{document}
+\maketitle
+
+Introducción: 
+
+
+En este reporte se hablará de la simulación de cinemática del robot cilindrico el cual mostrara los movimientos que hará de acuerdo a sus ejes x, y, z en el plano tridimensional basándonos en la transformación de Denavit-Hartenberg, la cual nos ayudara para la explicación del modelo.
+
+
+Marco Teorico:
+
+
+Representación de Denavit-Hartenberg
+
+
+Se trata de un procedimiento sistemático para describir la estrustura cinemática de una cadena articulada constituida por articulaciones con un solo grado de libertad. Para ello, a cada articulación se le asigna un sistema de referencia local con origen en un putno Qi y ejes ortonormales [Xi, Yi, Zi].
+
+
+Comenzando con un primer S,R fijo e inmóvil dado por los ejes [X0, Y0, Z0], anclado a un punto  fijo Q0 de la base sobre la que está montada tosa la estructura de la codena. Este sistema de referencia no tiene por qué ser el Universal con origen en (0,0,0) y la base canónica.
+
+
+Sistema de coordenadas.
+
+
+La manipulación de piezas requiere el movimiento espacial de su extremo.
+
+
+Es necesario conocer su posición y orientación de ésta con respecto a la bas del robot.
+
+
+Es necesario contar con herramientas que realicen este trabajo.
+
+
+Existe una teoría general para la localización de objetos en el espacio que puede aplicarse a otras áreas, estas son:
+
+
+Sistemas de coordenadas: Cartesiano, cilindrico, Esferico.
+
+
+Matricez de transformaciones: Traslación y Rotación. Metodo de Denavit-Hartenberg.
+
+
+
+Cuartenos.
+
+
+Movimiento cilindrico.
+
+
+Se trabaja en un sistema coordenado en OXYZ.
+
+
+Se utilizan coordenadas polares p(r,z)
+
+
+R es la distancia del origen O al extremo del vector p.
+es el ángulo que forma el vector p con el eje OX.
+
+
+Z representa la proyección sobre el eje OZ
+
+ 
+Robot cilíndrico
+Nuestro robot como ya se menciono es un robot cilíndrico el cual usara un sistema de usillo sin fin para los mecanismo de subir y bajar el brazo al igual que extender el brazo, la acción que desempeñara el robot será hacer cuerdas de soldadura para unión de láminas, la cual aún no se sabe si usaremos soldadura de arco o de micro alambre pero su función será la misma, no contara con una piza articulada ya que es innecesaria solo tendrá el instrumento de soldado en la punta, el robot en si será controlado con la ayuda de la raspberry en los comandos de las acciones que debe desempeñar, a continuación se muestra la tabla del movimiento que tendrá el robot según el método de Denavit- Hartenberg.
+
+
+\begin{center}
+\includegraphics[width=\textwidth]{Tabla.jpeg}
+\end{center}
+\end{document}
