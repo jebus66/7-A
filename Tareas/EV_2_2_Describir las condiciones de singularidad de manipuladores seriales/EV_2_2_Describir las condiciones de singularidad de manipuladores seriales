@@ -1,0 +1,119 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, amsbsy}
+\usepackage{cancel} % para tachar
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{stackrel} % para el comando \stackbin
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\title{Describir las condiciones de singularidad de manipuladores seriales}
+\author{Gutiérrez Muñoz José de Jesús \\
+7 - A \\ 
+Ing. Mecatrónica}
+\date{1 - octubre - 2019}
+
+
+\begin{document}
+\maketitle
+Direcciones singulares a continuación, se resumen los principales procedimientospara obtener las direcciones singulares asociadas a las singularidades:
+
+
+En primer lugar se procede a expresar $J_G$(q) en los diferentes sistemas de referencia asociados a las articulaciones, esto es $^iJ_G$(q) para todo i =0,1,...,7 y se evalúandichas matrices en cada una de las configuraciones singulares. Si aparece una fila de ceros, la dirección singularse alinea con uno de los ejes principales del sistema dereferencia {i}. Esto se debe a que la componente correspondiente  de  la  velocidad  lineal  o  angular  del  elemento terminal no podrá generarse sea cual sea el vector develocidades articulares. Si la fila de ceros es una de lastres primeras filas, la dirección singular será la traslacióna través del correspondiente eje del sistema de referencia {i} mientras que si la fila de ceros es una de las tres ́últimas,  entonces  la  dirección  singular  será  la  rotaciónal rededor del correspondiente eje de dicho sistema de referencia.
+
+
+Una segunda opci ́on consiste en expresar $J_G$(q) en un sistema de referencia {F} distinto de los sistemas de referencia asociados a las articulaciones. Al igual que en elcaso anterior, si en $^FJ_G$(q) hay una fila de ceros, la o lasdirecciones singulares estar ́an alineadas con algunos delos ejes de {F} ya sea impidiendo la traslaci ́on o rotaci ́onalrededor de ellos. 
+
+
+Una tercera opción es usar la descomposición en valores singulares (SVD por sus siglas en ingles-(Strang, 1980))del jacobiano.
+
+
+$J_G$(q) = $U \Sigma V^T$, con $U \epsilon M_6 y V \epsilon M_7 $ matrices ortogonales y $\Sigma \epsilon M_6×7$ matriz  diagonal  verificandodiag(Σ)=($\sigma_1,...,\sigma_6$) donde $\sigma_1 ≥ \sigma_2 ≥...\sigma_6 ≥0$ son los valores singulares deJG(q). En una configuraci ́onsingular en la que se pierdendGdL, losd ́ultimos valores
+
+
+singulares son nulos y, por lo tanto,d filas de $M = \Sigma · V^T$ corresponden a filas de ceros. Como
+
+
+UTJG(q)=M,
+
+
+U puede verse como la matriz B de la ecuación que permite expresar el jacobiano en otro sistema de referencia, en el cual, la o las direcciones singulares están alienadas con algunos de sus ejes principales, lo que impidela traslación o rotación alrededor de dichos ejes.
+
+
+Como $J_G(q)$ ha sido expresado en el sistema de referencia por conveniencia para el cálculo de las configuraciones singulares, se reutiliza así para la obtención de las direcciones singu-lares:
+
+
+Singularidades de posición: \\
+
+
+$q_4$ = 0
+
+
+\begin{equation}
+^4 J_{11} =
+\left
+[\begin{array}{lcr}
+−790c_2 s_3 \ \ \ \ \ \ 790c_3 \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ −390 \\ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ 0 \\ 390s_4 \ \ \ \ \ \ 390c4 + 400 \ \ \ \ \ 390s_4 \ \ \ \ \ 0
+\end{array}\right],
+\end{equation}
+
+
+Es  claro  que  la  dirección  singular  asociada  es  la traslación a lo largo del eje y del sistema de referencia {4}. \\
+
+
+q_4 = \frac{\pi}{ 2} \ y \ q_3 = \frac{\pi}{2}
+
+
+\begin{equation}
+^4 J_{11} =
+\left
+[\begin{array}{lcr}
+0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ -390 \\ 0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \\ 390s_4 \ \ \ \ \ 390c_4 + 400 \ \ \ \ \ \ \ \ 390s_4 \ \ \ \ \ \ \ \ \ \ \ 0
+ \end{array}\right]
+\end{equation}
+
+
+También en este caso la dirección singular asociadaes la traslación a lo largo del ejeydel sistema dereferencia {4}. \\
+
+
+Singularidad de Orientación: \\
+
+
+$q_6$ = 0
+
+
+En este caso lo más sencillo es expresar la submatriz $J_{22}$ en el sistema de referencia {5}, obteniendo:
+
+
+\begin{equation}
+^5 J_{22} =
+\left
+[\begin{array}{lcr}
+0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \\ 0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -1 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \\ 1 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1
+ \end{array}\right]
+\end{equation}
+
+
+Por tanto, la dirección singular asociada es la rotación alrededor del eje x del sistema de referencia {5}. \\
+
+
+Singularidad Acoplada.
+
+
+q_2 = - \frac{\pi}{ 2}, \ q_3 = 0, \ q_4 = 0, \ q_5 = 0 \ y \ q_6 = 0
+
+
+\begin{equation}
+^5 J_{22} =
+\left
+[\begin{array}{lcr}
+0 \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ 0 \\ 1 \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ 1 \\ 0 \ \ \ \ -1 \ \ \ \ \ \ 0 \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ 0 \ \ \ \ -1 \ \ \ \ \ \ \ 0 
+ \end{array}\right]
+\end{equation}
+
+
+La dirección singular asociada es la rotación alrededor del eje x del sistema de referencia {4}. En este caso, además, se cumple que el número de GdL que  se  pierden  es  mayor  que  uno, lo  que  implicaque hay más de una dirección singular. De hecho,las  direcciones  singulares  son  las  rotaciones  alrededor de los ejes x de los sistemas de referencias {1}, {2}, {3}, {4}, {5} y {6}.
+\end{document}
