@@ -1,0 +1,53 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, amsbsy}
+\usepackage{cancel} % para tachar
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{stackrel} % para el comando \stackbin
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\title{Explicar el operador Jacobiano}
+\author{Gutiérrez Muñoz José de Jesús \\ 7 - A \\ Ing. Mecatrónica}
+\date{15 - Octubre - 2019}
+
+\begin{document}
+\maketitle
+ En calculo vectorial, se llama jacobiano o determinante jacobiano al determinante de la matriz jacobiana. Tanto la matriz jacobiana como el determinante jacobiano reciben su nombre en honor al matemático Carl Gustav Jacobi.
+
+La matriz jacobiana es una matriz formada por las derivadas parciales de primer orden de una función. Una de las aplicaciones más interesantes de esta matriz es la posibilidad de aproximar linealmente a la función en un punto. En este sentido, el jacobiano representa la derivada de una función multivariable.
+
+
+\center Función Vectorial.
+
+
+Supongamos   es una función que va del espacio euclideo n-dimensional a otro espacio euclídeo m-dimensional. Esta función está determinada por m funciones escalares reales:
+
+
+Cuando la función anterior es diferenciable, entonces las derivadas parciales de estas m funciones pueden ser organizadas en una matriz m por n, la matriz jacobiana de F es :
+
+Esta matriz es notada de diversas maneras:
+Nótese que la fila, i-ésima fila coincidirá dada con el gradiente de la función $y_i$, para i = 1,...,m.
+Si p es un punto de $R^n$ y F es diferenciable en p, entonces su derivada está dada por $J_F(p).$ En este caso, la aplicación lineal descrita por $J_F(p)$ es la mejor aproximacion lineal de F cerca del punto p, de esta manera:
+
+Para x cerca de p. O con mayor precisión: 
+
+\begin{center}
+\includegraphics[width=\textwidth]{Imagen.jpg}
+\end{center}
+
+Ejemplo. La matriz jacobiana de la función $F : R^3 → R^3$ definida como:
+
+\begin{center}
+\includegraphics[width=\textwidth]{Imagen1.jpg}
+\end{center}
+
+es:
+
+\begin{center}
+\includegraphics[width=\textwidth]{Imagen2.jpg}
+\end{center}
+\end{document}
