@@ -1,0 +1,161 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, amsbsy}
+\usepackage{cancel} % para tachar
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{stackrel} % para el comando \stackbin
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\title{Avance2 \\ Robot Cilíndrico}
+\author{Cinemática de robots \\ Moran Garabito Carlos Enrique \\ Alvarado Galicia Felipe \\
+Gutiérrez Muñoz José de Jesús \\ 
+Medina Rodríguez Francisco Javier \\
+Martínez Noyola Moisés Emanuel \\ 
+Pasillas Gonzáles Iván Pasillas \\ 
+7 - A \\ 
+Ing. Mecatrónica}
+\date{18 - Octumbre - 2019}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item Indice.
+\begin{itemize}
+ \item Indice.
+ \item Piezas de ensamblaje.
+ \item Selección de Material. 
+ \item Idea de la realización del proyecto.
+ \item Relación de materia.
+\end{itemize}
+
+ \item Piezas de ensamblaje.
+ 
+ Como se puede observar en las siguientes imágenes, así es la idea que se tiene con la forma de realizar el ensamblado del robot.
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Imagen 1.jpeg}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Imagen 2.jpeg}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Imagen 3.jpeg}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Imagen 4.jpeg}
+\end{center}
+
+\hfill
+
+\item Selección de Material.
+
+\hfill
+
+Benedicios del aluminio.
+
+\hfill
+
+Peso, resistencia, elasticidad, son algunos de los beneficios del aluminio que lo hacen único.
+
+\hfill
+
+Peso
+
+\hfill
+
+El aluminio es ligero, con una densidad de un tercio de la del acero: 2,700 kg/m3.
+
+\hfill
+
+Resistencia
+
+\hfill
+
+El aluminio presenta una resistencia a la tracción de entre 70 a 700 MPa dependiendo de la aleación y del proceso de elaboración. Los perfiles extruidos de aluminio con una aleación y un diseño apropiados pueden llegar a ser tan resistentes como el acero estructural.
+
+\hfill
+
+Elastico.
+
+\hfill
+
+El módulo de elasticidad (módulo de Young) del aluminio es un tercio que el del acero (E=70.000 MPa). Esto significa que el momento de inercia debe ser tres veces mayor en una extrusión de aluminio para lograr la misma deflexión que un perfil de acero.
+
+\hfill
+
+Facilidad de conformado.
+
+\hfill
+
+El aluminio posee una facilidad de conformado óptima, una característica que se aprovecha al máximo en la extrusión. El aluminio también se puede soldar, curvar, estirar, punzonar y fresar.
+
+\hfill
+
+Resistencia a la corrosión.
+
+\hfill
+
+Una fina capa de óxido se forma en contacto con el aire, lo que brinda una excelente protección contra la corrosión aun en ambientes agresivos. Esta capa se puede fortalecer aún más mediante acabados superficiales como el anodizado o el recubrimiento con pintura.
+
+\hfill
+
+Conductividad.
+
+\hfill
+
+La conductividad térmica y eléctrica son óptimas aun cuando se las compare con el cobre. Más aún, un conductor de aluminio pesa sólo la mitad que un conductor de cobre equivalente.
+
+\hfill
+
+No tóxico.
+
+\hfill
+
+El aluminio no es tóxico y, por lo tanto, es sumamente adecuado para la preparación y el almacenamiento de alimentos.
+
+\hfill
+
+El reciclaje de aluminio
+
+\hfill
+
+El aluminio es un material con muy buenas propiedades de reciclado. Sólo el 5 por ciento de la energía requerida para producir el metal primario inicialmente es requerida para volverlo a fundir, manteniéndose las propiedades del metal durante el proceso.
+
+\hfill
+
+\item Idea de la realización del proyecto.
+
+\hfill
+
+En nuestro caso tenemos la idea de realizar el robot con la ayuda de una fundidora que nosotros mismo planeamos realizar.
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{download.jpg}
+\end{center}
+
+Gracias a algunas herramientas con las que contamos, se dio la idea de realizar esta fundidora.
+La cual también realizaremos los moldes necesarios parece hacer las piezas que hemos realizado en las clases de diseño.
+Esta parte de la fundidora, es obviamente complicado, mas que nada para conseguir el material resistente para la temperatura que se llevara acabo al hacer estos moldes.
+
+ \hfill
+ 
+\item Relación de materia.
+
+\hfill
+
+Por el momento solo hemos realizado el diseño de ensamblado, lo cual solo la materia de Diseños y Selección de elementos mecánicos. 
+Aunque no se podría decir que es la única materia que nos a ayudado, pero en lo que hemos realizado más trabajo a base del proyecto, es por el momento el diseño. 
+\end{enumerate}
+
+\end{document}
