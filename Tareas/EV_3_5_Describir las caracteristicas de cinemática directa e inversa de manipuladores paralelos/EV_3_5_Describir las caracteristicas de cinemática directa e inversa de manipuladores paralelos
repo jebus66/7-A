@@ -1,0 +1,37 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, amsbsy}
+\usepackage{cancel} % para tachar
+\usepackage{mathdots} % para el comando \iddots
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{stackrel} % para el comando \stackbin
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\title{Describir las caracteristicas de cinemática directa e inversa de manipuladores paralelos}
+\author{Gutiérrez Muñoz José de Jesús \\ 7 - A \\ Ing. Mecatrónica}
+\date{29 - Octubre - 2019}
+
+\begin{document}
+\maketitle
+
+En robots paralelos, la cinemática inversa consiste en encontrar las variables de las juntas activas y pasivas en función de las coordenadas del efector final del robot y puede ser utilizada para controlarla posición del efector final. El modelo cinemático de este tipo de robots tiene ecuaciones algebraicas con múltiples soluciones.
+
+En la cinemática directa de robots paralelos el problema es determinar la posición del efector final en función de las juntas activas. En general, la solución a este problema no es única, de ahí que la cinemática ha sido objeto de una intensa investigación, por ejemplo, el trabajo reportado por Merlet. Raghavan muestra la solución de la cinemática directa de un manipulador paralelo resolviendo en función de un polinomio. Merlet, Tsai y Ángeles mostraron, de igual manera, que el problema de la cinemática directa es reducir las ecuaciones de posición a un polinomio en función de las variables activas. Sin embargo, la solución del polinomio no asegura la correcta evolución de las variables de las juntas activas y no considera a las juntas pasivas, al ejecutar una tarea dada. Por otro lado, no hay algoritmo conocido que permita la fácil determinación de una postura única para la plataforma móvil.
+
+Es importante hacer hincapié en el problema del resultado de la cinemática directa por polinomio. El cálculo puede implicar un gran número de operaciones y por lo tanto puede ser muy sensible a errores numéricos de redondeo; por esta razón la comprobación de la validez de las soluciones con la cinemática inversa es normalmente necesaria.
+
+Un problema para los métodos numéricos rápidos es que incluso el más rápido es todavía lento para su uso en tiempo real, por ejemplo, para fines de control. Entre los trabajos pioneros publicados que han tratado de resolver éste problema se puede citar a Waldron (1966), quien estudió el movimiento instantáneo por teoría de tornillos en cadenas cinemáticas cerradas, asimismo, se han propuesto otros métodos de análisis[6-8]. La cinemática diferencial de manipuladores paralelos se complica por la existencia de numerosas cadenas cinemáticas cerradas; recientemente, Mohamed, asimismo, Mohamed y Duffy propusieron la aplicación de la teoría de tornillos recíprocos y Sugimoto a su vez, propuso la utilización del álgebra de motor para el análisis del jacobiano de manipuladores paralelos.
+
+La solución de la cinemática directa e inversa, utilizando la integración de la cinemática diferencial, es particularmente importante para los manipuladores de cadenas cinemáticas cerradas cuyas soluciones no existen, son difíciles de obtener, o son demasiado complejas para ser tratadas; el trabajo de Campos, A., R. Guenther, and D. Martins, sobre robots redundantes o paralelos, constituye un buen ejemplo de esto.
+
+Chung aborda la cinemática de robots manipuladores seriales redundantes planos, utilizando cadenas virtuales y subcadenas virtuales, para resolver el problema de la cinemática inversa. Chung define a un eslabón virtual como un enlace ficticio que conecta a dos articulaciones. Las ventajas son que reduce la carga de cómputo y logra la manipulación a nivel general mediante la obtención óptima de los ángulos. Entre las desventajas que presenta esta estrategia de análisis se puede mencionar que sólo se aplican a robots seriales planos, es complicado utilizar el método en manipuladores paralelos y tampoco se consideran las velocidades lineales y angulares del robot.
+
+Toshio describe al brazo virtual como un manipulador que tiene la misma estructura cinemática de un manipulador real. Su teoría se basa en un sistema que denomina distribuido y que es la representación de la cinemática del manipulador. Así mismo, utiliza la propagación hacia atrás de redes neuronales. Entre las ventajas del método se pueden mencionar varias; cada subsistema puede trabajar totalmente autónomo, el movimiento de la articulación del manipulador redundante se puede calcular de una manera paralela y distribuida y la redundancia cinemática del manipulador puede ser utilizada positivamente usando sub-brazos virtuales. Algunas desventajas del modelo propuesto por Toshio son que sólo se puede utilizar en robots seriales redundantes planos, asimismo, no toma en cuenta las velocidades lineales y angulares del robot.
+
+Para el caso de la síntesis de mecanismos paralelos se utilizan y definen cadenas virtuales seriales y cadenas virtuales paralelas, las cuales se desarrollan sobre la base de la teoría de tornillos. En este caso, cada cadena virtual es propuesta por un análisis exhaustivo de sistemas recíprocos de tornillos.Las cadenas virtuales paralelas constituye un tema de investigación que no ha sido resuelto en su totalidad[20].Una de las ventajas de aplicar la teoría de tornillos es que se obtienen nuevas estructuras de mecanismos paralelos con ayuda de las cadenas virtuales que define el mismo analista. Entre las desventajas se tiene que sólo se aplica para la obtención de nuevas configuraciones de robots paralelos, no se realiza el modelado de la cinemática directa, inversa y no se obtiene la matriz jacobiana.
+
+Por otro lado, como parte del tema de cadenas virtuales, se definen también las cadenas virtuales de Assur y sus aplicaciones en la cinemática diferencial de robots paralelos. Las cadenas virtuales de Assur son útiles para la obtención de información sobre los movimientos relativos o también para imponer restricciones cinemáticas particulares entre dos eslabones de una cadena cinemática. Entre las ventajas que se pueden mencionar están el hecho de que el método utiliza la cinemática diferencial y el mismo eslabón virtual se utiliza para restringir el movimiento. Asimismo, se pueden definir eslabones virtuales en el plano y en el espacio cartesiano. Una de las desventajas de este método radica en que aún considerando el eslabón virtual no se obtiene una matriz jacobiana que considere a las juntas pasivas de robot. Al final se llega a una matriz jacobiana similar a la presentada por Gosselin, C. and J. Angeles[21], donde solo se contemplan juntas activas y no se presentan resultados de simulación para validar los resultados.
+\end{document}
